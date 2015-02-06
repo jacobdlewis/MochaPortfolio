@@ -1,5 +1,9 @@
 /* jshint mocha: true, expr: true, strict: false */
 
+beforeEach(function(){
+  $('tbody').empty();
+});
+
 describe('test suite', function() {
   it('should assert true', function () {
     true.should.be.true;
@@ -64,10 +68,10 @@ describe('refreshStockPrices', function () {
       {Symbol: 'MSFT', LastPrice: 23.56}
     ];
     $tbody = $('tbody'),
-    $trs   = $('tr');
 
     $('tbody').append('<tr><td>Apple Inc</td><td>AAPL</td><td>12.34</td><td>12.34</td></tr>');
     $('tbody').append('<tr><td>Microsoft Corp</td><td>MSFT</td><td>23.34</td><td>23.45</td></tr>');
+    $trs   = $('tr');
 
     refreshStockPrices(stocks);
 
