@@ -1,0 +1,37 @@
+{
+  "name": "MochaPortfolio",
+  "version": "0.0.1",
+  "description": "This is an app demonstrating testing with Javascript, chai, and mocha",
+  "main": "public/index.html",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "async": "^0.9.0",
+    "jquery": "^2.1.3",
+    "lodash": "^3.1.0"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "karma": "^0.12.31",
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^0.1.10",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "mocha": "^2.1.0",
+    "mocha-phantomjs": "^3.5.3",
+    "phantomjs": "^1.9.15"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jacobdlewis/MochaPortfolio.git"
+  },
+  "author": "\"jacob lewis <scott@sscotth.io>",
+  "license": "mit",
+  "bugs": {
+    "url": "https://github.com/jacobdlewis/MochaPortfolio/issues"
+  },
+  "homepage": "https://github.com/jacobdlewis/MochaPortfolio"
+}
