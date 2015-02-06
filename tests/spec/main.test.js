@@ -26,7 +26,8 @@ describe('totalStocks', function(){
                    { Symbol: 'BANANA', LastPrice: 0.1 },
                    { Symbol: 'STUFF', LastPrice: 0.2 }
                  ];
-      totalStocks(stocks2).should.equal(0.3);
+      totalStocks(stocks).should.be.closeTo(36.01, 0.01);
+      totalStocks(stocks2).should.be.closeTo(0.3, 0.01);
   });
 });
 describe('DOM', function() {

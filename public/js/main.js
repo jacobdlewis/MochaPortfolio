@@ -54,5 +54,5 @@ function totalStocks(listOStocks) {
   _.forEach(listOStocks, function(stock) {
   sumStocks += stock.LastPrice;
   });
-  return parseFloat(sumStocks.toFixed(1));
+  return sumStocks;
 };
