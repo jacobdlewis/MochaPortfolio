@@ -18,7 +18,10 @@ describe('hello', function () {
 });
 
 describe('DOM', function() {
+
   describe('table', function() {
+
+
     describe('addStockToTable', function() {
       it('should add a row to the table', function() {
         var stock = { Name: "SuperCorp", Symbol: "SCRP", LastPrice: 34.32 };
@@ -26,6 +29,13 @@ describe('DOM', function() {
         addStockToTable(stock);
         $('tr').length.should.equal(1);
       });
+       it('should ignore a not found stock ticker', function() {
+         var stock = { Message: 'No symbol matches found for XXX.' };
+         $('tr').length.should.equal(0);
+         addStockToTable(stock);
+         $('tr').length.should.equal(0);
+      });
+
       it('should add two stocks to the table, using stock data from ajax call', function() {
         var stock = { Name: "SuperCorp", Symbol: "SCRP", LastPrice: 34.32 };
              $row = addStockToTable(stock);
@@ -36,7 +46,7 @@ describe('DOM', function() {
         $($tds[2]).text().should.equal('34.32');
         $($tds[3]).text().should.equal('34.32');
       });
-    });
+     });
 
   describe('refreshStockPrices', function () {
     it('should edit each stock in the table with a new price', function () {
@@ -58,6 +68,8 @@ describe('DOM', function() {
   });
  });
 });
+
+
 describe('ASYNC', function() {
 describe('getStock', function () {
   it('should return the stock object', function (done){
@@ -84,4 +96,10 @@ describe('getMultipleStocks', function () {
       });
     });
   });
+     it('should return a message if stock input if no stock is found', function(done) {
+        getStock('XXXX', function (stock) {
+          stock.Message.should.exist();
+        done();
+        })
+      });
  });

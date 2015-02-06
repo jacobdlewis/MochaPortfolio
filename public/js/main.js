@@ -11,17 +11,19 @@ function refreshStockPrices(stocks) {
 
 function addStockToTable(stock) {
   var $row = $('<tr></tr>');
-
+  if (stock.Message) {
+    console.log("that ain't no stock");
+    return;
+  } else {
   $row.append('<td>' + stock.Name + '</td>');
   $row.append('<td>' + stock.Symbol + '</td>');
   $row.append('<td>' + stock.LastPrice + '</td>');
   $row.append('<td>' + stock.LastPrice + '</td>');
 
   $('tbody').append($row);
-
+  }
   return $row;
 }
-
 function getStock(symbol, cb) {
   var url = 'http://dev.markitondemand.com/Api/v2/Quote/jsonp?symbol=' + symbol;
 
