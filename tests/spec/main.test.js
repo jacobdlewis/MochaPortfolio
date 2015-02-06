@@ -16,7 +16,19 @@ describe('hello', function () {
     hello().should.equal('world');
   });
 });
-
+describe('totalStocks', function(){
+  it('should return a sum of array of stocks total LastPrice', function(){
+    var stocks = [
+                   { Symbol: 'AAPL', LastPrice: 12.45 },
+                   { Symbol: 'MSFT', LastPrice: 23.56 }
+                 ],
+        stocks2 = [
+                   { Symbol: 'BANANA', LastPrice: 0.1 },
+                   { Symbol: 'STUFF', LastPrice: 0.2 }
+                 ];
+      totalStocks(stocks2).should.equal(0.3);
+  });
+});
 describe('DOM', function() {
 
   describe('table', function() {

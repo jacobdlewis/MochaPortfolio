@@ -48,3 +48,11 @@ function getMultipleStocks(symbols, cb) {
 function hello() {
   return 'world';
 }
+
+function totalStocks(listOStocks) {
+  var sumStocks = 0;
+  _.forEach(listOStocks, function(stock) {
+  sumStocks += stock.LastPrice;
+  });
+  return parseFloat(sumStocks.toFixed(1));
+};
