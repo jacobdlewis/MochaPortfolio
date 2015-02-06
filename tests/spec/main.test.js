@@ -40,7 +40,7 @@ describe('DOM', function() {
      });
 
      beforeEach(function () {
-       $('tbody').empty();
+         $('tbody').empty();
      });
 
     describe('addStockToTable', function() {
@@ -92,6 +92,7 @@ describe('DOM', function() {
 
 
 describe('ASYNC', function() {
+  this.timeout(10 * 1000);
 describe('getStock', function () {
   it('should return the stock object', function (done){
     getStock('AAPL', function(stock){
