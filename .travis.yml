@@ -8,10 +8,12 @@
     - export DISPLAY=:99.0
     - sh -e /etc/init.d/xvfb start
   script:
-    - npm run test-once
+    - npm run test -- karma.conf-ci.js
   after_script:
     - cat ./coverage/PhantomJS*/lcov.info | ./node_modules/codeclimate-test-reporter/bin/codeclimate.js
   env:
     global:
       - secure: U+gcu+kBZ9CSnioN+/rtFk3/5yfg5qFAIRCcLlZmzatoJTMxJ08efhL8tRmyTPxCF/clbt4Tja8c8YxRiym/sgTdw7FZl8WdGFiaagh2evdDwFd+Zim2RTCVBHtV3fgcozqCf/pOA9AkBs8+0jTcNJzwvUH0t+XIFCx/P5e41i0=
       - secure: OJ2He+Krz7ryNsAfV89TVSZepXXfrYig6TV7hhWHsX69OsnFcnq3GRounAhqBqrPe/v8KgUCqwpF2W26ciNuFSEt1N/LCkX+FlfcW/7zPccpjtEfaPz3yReFy9499Hci8ktFlN3XilqItguRZGKvGpur0FOiOvV0epe5HgkyDxk=
+      - secure: NtNfvLmw25WRCDlOxtUF+13unCLY0UFfLFPj5Kh6xSf3EVN1GpD6YMpLZ+Yk0VGw1l6EAiaXZKBCLoSZ5sMvXfYSvGgdATfKHFo/P/+YazK4QgH5uzjld65bvF1A4H/S3BET6HlMKXru3gYiptSqsU9gKkyKPPIX9FWq510+gfM=
+      - secure: qpHtw/416no3/d/kG+WmNoZZuSpMP2WfOy56S/A6I34EJxspO4733neZ1lxD+DyqokQH9Nv6oGh3VOUvFXs+ZUC+V9QfWt9+U5JtrrEtx9Q0BsFpNyU+uypTckoa0wggNrpLvCELOVcst28j85HIuFSspP9dpRD6D2A27qdlkMY=
